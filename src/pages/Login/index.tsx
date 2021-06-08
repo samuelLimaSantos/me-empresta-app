@@ -6,7 +6,6 @@ import { styles } from "./styles";
 import { SimpleInput } from "../../components/SimpleInput";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
-import { ComponentTest } from "../../components/ComponentTest";
 
 const Login = () => {
 
@@ -38,30 +37,28 @@ const Login = () => {
         </View>
 
         <View>
-          <SimpleInput 
-            placeholder="E-mail" 
-            keyboardType="email-address" 
+          <SimpleInput
+            placeholder="E-mail"
+            keyboardType="email-address"
             autoCorrect={false}
-            autoCapitalize="none" 
+            autoCapitalize="none"
             returnKeyType="next"
           />
-          <SimpleInput 
-            placeholder="Senha" 
-            secureTextEntry 
+          <SimpleInput
+            placeholder="Senha"
+            secureTextEntry
             returnKeyType="send"
           />
         </View>
 
-        <ComponentTest  text="ufhdiIOHDFOISDHFOOOusdfh" />
-
         <View style={styles.containerButton}>
           <SimpleButton click={() => {
-            
-          }} title="Login"/>
+
+          }} title="Login" />
         </View>
       </KeyboardAvoidingView>
-      
-      <Image  source={astronautaLogin} style={styles.image}/>
+
+      <Image source={astronautaLogin} style={styles.image} />
     </ScrollView>
   )
 }
