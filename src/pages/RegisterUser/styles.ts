@@ -29,6 +29,27 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
 
+  containerInput: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+
+  boxClean: {
+    alignItems: 'center',
+    justifyContent: "center",
+    width: 25,
+    height: 25,
+    borderWidth: 1,
+    borderColor: "red",
+    borderRadius: 20,
+    marginLeft: 10
+  },
+
+  clean: {
+    fontSize: 10,
+    color: "red"
+  },
+
   containerConfirmeInfo: {
     alignItems: 'flex-start',
     justifyContent: 'center',

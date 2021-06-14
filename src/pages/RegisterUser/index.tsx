@@ -15,8 +15,24 @@ const RegisterUser = () => {
 
   const navigation = useNavigation();
 
+
   const [nextStep, setNextStep] = useState(false);
   const [finishRegister, setFinishRegister] = useState(false);
+  const [editStep, setEditStep] = useState(false);
+
+  /* Variaveis de estado - Step#1 */
+  const [nomeUser, setNomeUser] = useState('');
+  const [emailUser, setEmailUser] = useState('');
+  const [cidadeUser, setCidadeUser] = useState('');
+  const [estadoUser, setEstadoUser] = useState('');
+
+  /* Variaveis de estado - Step#2 */
+  const [cpfUser, setCpfUser] = useState('');
+  const [telefoneUser, setTelefoneUser] = useState('');
+  const [senhaUser, setSenhaUser] = useState('');
+  const [confirmSenhaUser, setConfirmSenhaUser] = useState('');
+
+
 
 
   return (
@@ -32,34 +48,79 @@ const RegisterUser = () => {
             <Text style={styles.subTitle}>Preencha os campos e tenha acesso a plataforma</Text>
 
             <View style={styles.containerForm}>
-              <SimpleInput
-                placeholder="Nome"
-                keyboardType="default"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
-              <SimpleInput
-                placeholder="E-mail"
-                keyboardType="email-address"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
-              <SimpleInput
-                placeholder="Cidade"
-                keyboardType="default"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
-              <SimpleInput
-                placeholder="Estado"
-                keyboardType="default"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
+
+              <View style={styles.containerInput}>
+                <SimpleInput
+                  placeholder="Nome"
+                  keyboardType="default"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                  onChangeText={setNomeUser}
+                  value={nomeUser}
+                />
+
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setNomeUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
+
+              <View style={styles.containerInput}>
+
+                <SimpleInput
+                  placeholder="E-mail"
+                  keyboardType="email-address"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                  onChangeText={setEmailUser}
+                  value={emailUser}
+                />
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setEmailUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
+
+              <View style={styles.containerInput}>
+
+                <SimpleInput
+                  placeholder="Cidade"
+                  keyboardType="default"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                  onChangeText={setCidadeUser}
+                  value={cidadeUser}
+                />
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setCidadeUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
+
+              <View style={styles.containerInput}>
+
+                <SimpleInput
+                  placeholder="Estado"
+                  keyboardType="default"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                  onChangeText={setEstadoUser}
+                  value={estadoUser}
+                />
+
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setEstadoUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
 
               <View style={styles.containerButton}>
                 <SimpleButton click={() => {
@@ -82,34 +143,69 @@ const RegisterUser = () => {
             <Text style={styles.subTitle}>Preencha os campos com os seus dados</Text>
 
             <View style={styles.containerForm}>
-              <SimpleInput
-                placeholder="CPF"
-                keyboardType="numeric"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
-              <SimpleInput
-                placeholder="Telefone"
-                keyboardType="numeric"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
-              <SimpleInput
-                placeholder="Senha"
-                keyboardType="default"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
-              <SimpleInput
-                placeholder="Confirmar senha"
-                keyboardType="default"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
+
+              <View style={styles.containerInput}>
+                <SimpleInput
+                  placeholder="CPF"
+                  keyboardType="numeric"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                />
+
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setCpfUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
+
+              <View style={styles.containerInput}>
+                <SimpleInput
+                  placeholder="Telefone"
+                  keyboardType="numeric"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                />
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setTelefoneUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
+
+              <View style={styles.containerInput}>
+
+                <SimpleInput
+                  placeholder="Senha"
+                  keyboardType="default"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                />
+
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setSenhaUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
+
+              <View style={styles.containerInput}>
+                <SimpleInput
+                  placeholder="Confirmar senha"
+                  keyboardType="default"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="next"
+                />
+                {editStep === true &&
+                  <TouchableOpacity onPress={() => { setConfirmSenhaUser('') }} style={styles.boxClean}>
+                    <Text style={styles.clean}>X</Text>
+                  </TouchableOpacity>
+                }
+              </View>
 
               <View style={styles.containerButton}>
                 <SimpleButton click={() => {
@@ -117,7 +213,7 @@ const RegisterUser = () => {
                 }} title="Finalizar cadastro" />
               </View>
 
-              <TouchableOpacity onPress={() => { setNextStep(false) }} style={styles.containerFakeButton}>
+              <TouchableOpacity onPress={() => { setNextStep(false); setEditStep(false) }} style={styles.containerFakeButton}>
                 <Text style={styles.fakeButtonText}>Voltar</Text>
               </TouchableOpacity>
             </View>
@@ -169,14 +265,13 @@ const RegisterUser = () => {
                   setFinishRegister(true)
                 }} title="Concluir cadastro" />
 
-                <TouchableOpacity onPress={() => { setNextStep(false); setFinishRegister(false) }} style={styles.containerFakeButton}>
+                <TouchableOpacity onPress={() => { setNextStep(false); setFinishRegister(false); setEditStep(true) }} style={styles.containerFakeButton}>
                   <Text style={styles.fakeButtonText}>Editar informações</Text>
                 </TouchableOpacity>
               </View>
             </View>
           </>
         }
-
       </SafeAreaView>
     </ScrollView>
   )
