@@ -262,7 +262,7 @@ const RegisterUser = () => {
 
               <View style={styles.containerButton}>
                 <SimpleButton click={() => {
-                  setFinishRegister(true)
+                  navigation.navigate('RegisterSuccess')
                 }} title="Concluir cadastro" />
 
                 <TouchableOpacity onPress={() => { setNextStep(false); setFinishRegister(false); setEditStep(true) }} style={styles.containerFakeButton}>
