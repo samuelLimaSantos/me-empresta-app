@@ -3,8 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Welcome } from './pages/Welcome';
 import { Login } from './pages/Login';
-import { SimpleButton } from './components/SimpleButton';
 import { RegisterUser } from './pages/RegisterUser';
+import { RegisterSuccess } from './pages/RegisterSuccess';
+
 
 
 const Routes = () => {
@@ -18,6 +19,7 @@ const Routes = () => {
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="RegisterUser" component={RegisterUser} />
+        <Stack.Screen name="RegisterSuccess" component={RegisterSuccess} />
       </Stack.Navigator>
     </NavigationContainer>
   )
