@@ -20,7 +20,7 @@ const RegisterSuccess = () => {
             <Text style={styles.subTitle}>Parabéns, agora você pode aproveitar o mundo dos alugáveis.</Text>
 
             <SimpleButton click={() => {
-              navigation.navigate('Home')
+              navigation.navigate('Login')
                 }} title="Entrar no app" />
       </SafeAreaView>
     </ScrollView>
