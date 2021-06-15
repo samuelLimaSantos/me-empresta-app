@@ -53,7 +53,7 @@ const Login = () => {
 
         <View style={styles.containerButton}>
           <SimpleButton click={() => {
-
+            navigation.navigate('Home')
           }} title="Login" />
         </View>
       </KeyboardAvoidingView>
