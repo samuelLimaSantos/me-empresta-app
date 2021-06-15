@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native"
+import React from "react";
+import { Text, Image, ScrollView } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context";
-import { styles } from "../RegisterSuccess/styles";
+import { styles } from "./styles";
 import { SimpleButton } from "../../components/SimpleButton";
 import successRegister from "../../../assets/success-register.png"
 
