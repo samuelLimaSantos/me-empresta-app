@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: '8.8%',
+    height: '7%',
     backgroundColor: "#0400BE",
     alignItems: 'center',
     justifyContent: 'center',
-    borderTopRightRadius: 15,
-    borderTopLeftRadius: 15,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
     position: 'absolute', 
     left: 0, 
     right: 0, 
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
 
   icons: {
-    width: 30,
-    height: 30
+    width: 25,
+    height: 25,
   },
 
   optionsActive: {
@@ -51,10 +51,10 @@ const styles = StyleSheet.create({
   boxOptionsAdd: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 64,
-    height: 64,
+    width: 58,
+    height: 58,
     backgroundColor: '#FDE46E',
-    borderRadius: 50
+    borderRadius: 50,
   },
 
 
