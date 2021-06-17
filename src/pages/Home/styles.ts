@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import Constants from "expo-constants";
+import { Inter_100Thin, Inter_400Regular } from "@expo-google-fonts/inter";
 
 const styles = StyleSheet.create({
   container: {
@@ -9,41 +10,42 @@ const styles = StyleSheet.create({
 
   containerSearch: {
     backgroundColor: '#fff',
-    marginTop: 85,
-    paddingTop: 5,
-    paddingBottom: 5,
+    marginTop: 65,
+    paddingTop: 2,
+    paddingBottom: 2,
     paddingLeft: 50,
     paddingRight: 50
   },
 
   containerProdutos: {
-    backgroundColor: '#000',
     width: 385,
-    height: 700,
-    marginTop:85,
-    marginLeft: 10,
-    marginRight: 10
+    height: 670,
+    marginTop: 85,
+    marginBottom: 50
   },
 
   containerProdutosSearch: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
     width: 400,
-    height: 700,
+    height: 600,
   },
 
-  productContainer: {
+  limiteContainer: {
     flexDirection: 'row',
-    marginTop: 10,
+  },
+
+  product: {
+    marginBottom: 10
   },
 
   titleContainer: {
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: '700',
     color: '#4B00EB',
     marginLeft: 14,
-    marginTop: 10,
+    marginTop: 2,
     marginBottom: 6,
-
-
   },
 
   produto: {
@@ -51,11 +53,12 @@ const styles = StyleSheet.create({
     width: 180,
     height: 260,
     alignItems: 'center',
-    marginLeft: 20
+    marginLeft: 10,
+    marginRight: 10,
   },
 
   imageProduct: {
-    width: 180,
+    width: 140,
     height: 150,
     alignItems: 'center',
   },
@@ -110,9 +113,27 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: 'blue',
     fontWeight:'700',
+  },
+
+  buttonMore: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    borderColor: '#4B00EB',
+    borderRadius: 20,
+    width: 140,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    alignItems: 'center',
+    marginLeft: '34%',
+    marginRight: '34%',
+    marginBottom: 30
+  },
+
+  textButtonMore: {
+    color: '#4B00EB'
   }
-
-
 });
 
 export { styles };
