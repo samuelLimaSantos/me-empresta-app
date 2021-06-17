@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: '10%',
+    height: '8%',
     backgroundColor: "#fff",
     alignItems: 'center',
     justifyContent: 'center',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 22,
     color: '#0400BE',
     fontWeight: 'bold'
   },
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
 
   subtitle: {
-    fontSize: 24,
+    fontSize: 22,
     color: '#DBDBDB',
     fontWeight: 'bold',
   },

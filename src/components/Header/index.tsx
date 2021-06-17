@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, SafeAreaView } from 'react-native'
 import { styles } from './styles';
 
 import filterIcon from '../../../assets/icons/filter-icon.png';
@@ -9,7 +9,7 @@ import cartIcon from '../../../assets/icons/cart-icon.png';
 const Header = () => {
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
 
             <View style={styles.containerHeader}>
 
@@ -33,7 +33,7 @@ const Header = () => {
                         </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
