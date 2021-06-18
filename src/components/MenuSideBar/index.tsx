@@ -6,15 +6,18 @@ import homeIcon from '../../../assets/icons/home-icon.png';
 import searchIcon from '../../../assets/icons/search-icon.png';
 import categoryIcon from '../../../assets/icons/category-icon.png';
 import profileIcon from '../../../assets/icons/profile-icon.png';
+import { useNavigation } from "@react-navigation/native";
 
 const MenuSideBar = () => {
+
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
 
             <View style={styles.containerOptions}>
                 <View>
-                    <TouchableOpacity style={styles.boxOptions}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("Home") }} style={styles.boxOptions}>
                         <Image source={homeIcon} style={styles.icons} />
                         <Text style={styles.optionsActive}>
                             Início
@@ -32,7 +35,7 @@ const MenuSideBar = () => {
                 </View>
 
                 <View>
-                    <TouchableOpacity style={styles.boxOptionsAdd}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("RegisterProduct") }} style={styles.boxOptionsAdd}>
                         <Text style={styles.optionsDeactiveAdd}>
                             +
                         </Text>
@@ -40,7 +43,7 @@ const MenuSideBar = () => {
                 </View>
 
                 <View>
-                    <TouchableOpacity style={styles.boxOptions}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("Category") }} style={styles.boxOptions}>
                         <Image source={categoryIcon} style={styles.icons} />
                         <Text style={styles.optionsDeactive}>
                             Categorias
@@ -49,7 +52,7 @@ const MenuSideBar = () => {
                 </View>
 
                 <View>
-                    <TouchableOpacity style={styles.boxOptions}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("Profile") }} style={styles.boxOptions}>
                         <Image source={profileIcon} style={styles.icons} />
                         <Text style={styles.optionsDeactive}>
                             Perfil
