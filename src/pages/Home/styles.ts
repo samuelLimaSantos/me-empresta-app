@@ -1,20 +1,11 @@
 import { StyleSheet } from "react-native";
 import Constants from "expo-constants";
-import { Inter_100Thin, Inter_400Regular } from "@expo-google-fonts/inter";
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight,
     flex: 1,
-  },
-
-  containerSearch: {
-    backgroundColor: '#fff',
-    marginTop: 65,
-    paddingTop: 2,
-    paddingBottom: 2,
-    paddingLeft: 50,
-    paddingRight: 50
+    alignItems: 'center',
   },
 
   containerProdutos: {
@@ -22,13 +13,6 @@ const styles = StyleSheet.create({
     height: 670,
     marginTop: 85,
     marginBottom: 50
-  },
-
-  containerProdutosSearch: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    width: 400,
-    height: 600,
   },
 
   limiteContainer: {
