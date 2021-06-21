@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   imageStep: {
     width: '50%',
     height: 200,
-    marginTop: 20
   },
 
   title: {
