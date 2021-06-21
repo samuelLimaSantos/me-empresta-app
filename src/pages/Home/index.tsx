@@ -15,28 +15,14 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      <Header title1="Home" title2="Feed" />
       <SafeAreaView>
-        {search !== false &&
-          <SafeAreaView>
-            <View style={styles.containerSearch}>
-              <SimpleInput
-                placeholder="Procurar"
-                keyboardType="default"
-                autoCorrect={false}
-                autoCapitalize="none"
-                returnKeyType="next"
-              />
-            </View>
-          </SafeAreaView>
-        }
-
         <ScrollView showsVerticalScrollIndicator={false} style={styles.containerProdutos}>
 
           <Text style={styles.titleContainer}>Novos itens</Text>
 
           <View style={styles.limiteContainer}>
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -54,7 +40,7 @@ const Home = () => {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity  activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -75,7 +61,7 @@ const Home = () => {
 
           <View style={styles.limiteContainer}>
 
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity  activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -93,7 +79,7 @@ const Home = () => {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -112,7 +98,7 @@ const Home = () => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.buttonMore}>
+          <TouchableOpacity activeOpacity={0.7} style={styles.buttonMore}>
             <Text style={styles.textButtonMore}>Mostrar mais</Text>
           </TouchableOpacity>
 
@@ -120,7 +106,7 @@ const Home = () => {
           <Text style={styles.titleContainer}>Mais procurados</Text>
 
           <View style={styles.limiteContainer}>
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -138,7 +124,7 @@ const Home = () => {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -159,7 +145,7 @@ const Home = () => {
 
 
           <View style={styles.limiteContainer}>
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -177,7 +163,7 @@ const Home = () => {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.product}>
+            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
               <View style={styles.produto}>
                 <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
                   <View style={styles.boxNota}>
@@ -196,13 +182,13 @@ const Home = () => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.buttonMore}>
+          <TouchableOpacity activeOpacity={0.7} style={styles.buttonMore}>
             <Text style={styles.textButtonMore}>Mostrar mais</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
 
-        <MenuSideBar />
+      <MenuSideBar />
     </SafeAreaView>
   )
 }
