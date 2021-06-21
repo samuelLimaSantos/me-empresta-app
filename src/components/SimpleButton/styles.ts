@@ -3,11 +3,14 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   button: {
     width: "60%",
-    backgroundColor: "#9A5CD1",
+    backgroundColor: "#5C2A9D",
     elevation: 3,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 8
+    borderRadius: 8,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 20
 
   },
   textButton: {
