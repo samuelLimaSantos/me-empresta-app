@@ -139,7 +139,7 @@ const RegisterUser = () => {
           <>
             <Image source={imageStepTwo} style={styles.imageStep} />
 
-            <Text style={styles.title}>Dados cadatrais</Text>
+            <Text style={styles.title}>Dados cadastrais</Text>
             <Text style={styles.subTitle}>Preencha os campos com os seus dados</Text>
 
             <View style={styles.containerForm}>
