@@ -35,7 +35,7 @@ const MenuSideBar = () => {
                 </View>
 
                 <View>
-                    <TouchableOpacity onPress={() => { navigation.navigate("RegisterProduct") }} style={styles.boxOptionsAdd}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("CreateOffer") }} style={styles.boxOptionsAdd}>
                         <Text style={styles.optionsDeactiveAdd}>
                             +
                         </Text>
