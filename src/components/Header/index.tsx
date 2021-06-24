@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Image, SafeAreaView, StatusBar } from 'react-native'
 import { styles } from './styles';
 
+import { MaterialIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+
 import filterIcon from '../../../assets/icons/filter-icon.png';
-import favoriteIcon from '../../../assets/icons/favorite-icon.png';
 import cartIcon from '../../../assets/icons/cart-icon.png';
 
 interface IHeaderProps {
@@ -11,11 +13,11 @@ interface IHeaderProps {
     title2: string;
 }
 
-const Header = ({title1, title2} : IHeaderProps) => {
+const Header = ({ title1, title2 }: IHeaderProps) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar  barStyle="light-content" backgroundColor="#0400BE" translucent />
+            <StatusBar barStyle="light-content" backgroundColor="#0400BE" translucent />
 
             <View style={styles.containerHeader}>
 
@@ -26,17 +28,17 @@ const Header = ({title1, title2} : IHeaderProps) => {
                 </View>
 
                 <View style={styles.containerOptionsHeader}>
-                        <TouchableOpacity style={styles.buttonIcons}>
-                            <Image source={filterIcon}  />
-                        </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.4} style={styles.buttonIcons}>
+                        <Ionicons name="filter-outline" size={26} color="#9347F6" />
+                    </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.buttonIcons}>
-                            <Image source={favoriteIcon} />
-                        </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.4} style={styles.buttonIcons}>
+                        <MaterialIcons name="favorite" size={26} color="red" />
+                    </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.buttonIcons}>
-                            <Image source={cartIcon} />
-                        </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.4} style={styles.buttonIcons}>
+                        <Ionicons name="cart-outline" size={26} color="#9347F6" />
+                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>

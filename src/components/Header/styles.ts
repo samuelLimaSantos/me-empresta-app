@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
 
   buttonIcons: {
     alignItems: 'center',
-    marginLeft: 10,
-    marginRight: 10
+    marginLeft: 8,
+    marginRight: 8
   },
 });
 
