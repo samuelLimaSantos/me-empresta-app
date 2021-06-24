@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
 
   optionsActive: {
     color: '#FDE46E',
-    fontSize: 10
+    fontWeight: 'bold',
+    fontSize: 10,
   },
 
   optionsDeactive: {
@@ -37,8 +38,9 @@ const styles = StyleSheet.create({
   },
 
   optionsDeactiveAdd: {
-    marginBottom: 5,
     color: '#0400BE',
+    alignItems: 'center',
+    justifyContent: 'center',
     fontSize: 40
   },
 
@@ -51,9 +53,8 @@ const styles = StyleSheet.create({
   boxOptionsAdd: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 58,
+    width: 65,
     height: 58,
-    backgroundColor: '#FDE46E',
     borderRadius: 50,
   },
 
