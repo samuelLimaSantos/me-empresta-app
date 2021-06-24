@@ -9,12 +9,9 @@ import { SimpleButton } from "../../components/SimpleButton";
 import { SimpleInput } from "../../components/SimpleInput";
 import offerImage from "../../../assets/store-message.png";
 import stepImage from "../../../assets/create-image.png";
-import iconCamera from "../../../assets/icons/camera-icon.png";
-import iconArrowDown from "../../../assets/icons/arrow-down-icon.png";
-import iconArrowUp from "../../../assets/icons/arrow-up-icon.png";
 
-
-
+import { FontAwesome } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 const CreateOffer = () => {
@@ -53,7 +50,7 @@ const CreateOffer = () => {
                         <Text style={styles.descriptionStep}>Preencha os dados sobre seu produto</Text>
 
                         <TouchableOpacity activeOpacity={0.7} style={styles.buttonCam}>
-                            <Image source={iconCamera} />
+                            <FontAwesome name="camera" size={16} color="#5C2A9D" />
                         </TouchableOpacity>
 
                         <SafeAreaView style={styles.containerInput}>
@@ -62,7 +59,7 @@ const CreateOffer = () => {
                             {showCategory === false &&
                                 <TouchableOpacity activeOpacity={0.7} style={styles.selectButton} onPress={() => { setShowCategory(true) }}>
                                     <Text style={styles.textSelectButton}> Selecione uma categoria</Text>
-                                    <Image source={iconArrowDown} />
+                                    <MaterialIcons name="arrow-drop-down" size={24} color="#5C2A9D" />
                                 </TouchableOpacity>
                             }
 
@@ -70,7 +67,7 @@ const CreateOffer = () => {
 
                                 <TouchableOpacity activeOpacity={0.7} style={styles.selectButton} onPress={() => { setShowCategory(false) }}>
                                     <Text style={styles.textSelectButton}> Selecione uma categoria</Text>
-                                    <Image source={iconArrowUp} />
+                                    <MaterialIcons name="arrow-drop-up" size={24} color="#5C2A9D" />
                                 </TouchableOpacity>
                             }
                         </SafeAreaView>
