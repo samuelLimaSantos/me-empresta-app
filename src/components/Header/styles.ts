@@ -3,14 +3,14 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: '8%',
     backgroundColor: "#fff",
     alignItems: 'center',
     position: 'absolute',
     marginTop: '10%',
     paddingTop: 10,
-    left: 0, 
-    right: 0, 
+    paddingBottom: 10,
+    left: 0,
+    right: 0,
   },
 
   containerHeader: {
