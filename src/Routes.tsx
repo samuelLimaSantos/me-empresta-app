@@ -8,6 +8,7 @@ import { RegisterSuccess } from './pages/RegisterSuccess';
 import { Home } from './pages/Home';
 import { CreateOffer } from './pages/CreateOffer';
 import { Cart } from './pages/Cart';
+import { Profile } from './pages/Profile';
 
 
 
@@ -26,6 +27,7 @@ const Routes = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="CreateOffer" component={CreateOffer} />
         <Stack.Screen name="Cart" component={Cart} />
+        <Stack.Screen name="Profile" component={Profile} />
 
       </Stack.Navigator>
     </NavigationContainer>
