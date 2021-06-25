@@ -7,7 +7,7 @@ type SimpleButtonProps = {
   title: string;
 }
 
-const SimpleButton = ({click, title}: SimpleButtonProps) => {
+const AlternativeButton = ({click, title}: SimpleButtonProps) => {
   return (
     <TouchableOpacity style={styles.button} onPress={click}>
       <Text style={styles.textButton}>
@@ -17,4 +17,4 @@ const SimpleButton = ({click, title}: SimpleButtonProps) => {
   )
 }
 
-export { SimpleButton };
+export { AlternativeButton };
