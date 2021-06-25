@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   imageStep: {
     width: '50%',
     height: 200,
-    marginTop: 20
   },
 
   title: {
@@ -89,7 +88,8 @@ const styles = StyleSheet.create({
 
   fakeButtonText: {
     fontSize: 16,
-    color: '#9A5CD1'
+    color: '#9A5CD1',
+    marginBottom: 20
   }
 });
 

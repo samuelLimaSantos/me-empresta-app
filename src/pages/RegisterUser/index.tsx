@@ -41,7 +41,7 @@ const RegisterUser = () => {
       <SafeAreaView style={styles.container}>
 
         {nextStep !== true &&
-          <>
+          <SafeAreaView style={{ alignItems: 'center' }}>
             <Image source={imageStepOne} style={styles.imageStep} />
 
             <Text style={styles.title}>Criar conta</Text>
@@ -132,11 +132,11 @@ const RegisterUser = () => {
                 </TouchableOpacity>
               </View>
             </View>
-          </>
+          </SafeAreaView>
         }
 
         {nextStep !== false && finishRegister === false &&
-          <>
+          <SafeAreaView style={{ alignItems: 'center' }}>
             <Image source={imageStepTwo} style={styles.imageStep} />
 
             <Text style={styles.title}>Dados cadastrais</Text>
@@ -217,11 +217,11 @@ const RegisterUser = () => {
                 <Text style={styles.fakeButtonText}>Voltar</Text>
               </TouchableOpacity>
             </View>
-          </>
+          </SafeAreaView>
         }
 
         {finishRegister === true &&
-          <>
+          <SafeAreaView style={{ alignItems: 'center' }}>
             <Image source={confirmRegister} style={styles.imageStep} />
 
             <Text style={styles.title}>Confirmar dados</Text>
@@ -270,7 +270,7 @@ const RegisterUser = () => {
                 </TouchableOpacity>
               </View>
             </View>
-          </>
+          </SafeAreaView>
         }
       </SafeAreaView>
     </ScrollView>
