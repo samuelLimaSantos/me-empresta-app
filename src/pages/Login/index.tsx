@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, KeyboardAvoidingView, Image, TouchableOpacity, Platform, Alert } from "react-native";
+import { View, Text, KeyboardAvoidingView, Image, TouchableOpacity, Platform, SafeAreaView } from "react-native";
 import { SimpleButton } from "../../components/SimpleButton";
 import astronautaLogin from "../../../assets/astronauta-login.png";
 import { styles } from "./styles";
@@ -12,7 +12,7 @@ const Login = () => {
   const navigation = useNavigation();
 
   return (
-    <ScrollView style={{ flex: 1}}>
+    <SafeAreaView style={{ flex: 1}}>
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}>
 
         <View style={styles.signInContainer}>
@@ -53,13 +53,13 @@ const Login = () => {
 
         <View style={styles.containerButton}>
           <SimpleButton click={() => {
-
+            navigation.navigate('Home')
           }} title="Login" />
         </View>
       </KeyboardAvoidingView>
 
       <Image source={astronautaLogin} style={styles.image} />
-    </ScrollView>
+    </SafeAreaView>
   )
 }
 
