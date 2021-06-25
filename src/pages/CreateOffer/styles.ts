@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     width: 300,
     marginLeft: 50,
     marginRight: 50,
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   selectButton: {
@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
 
   containerDuo: {
     width: 300,
-    marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginLeft: 50,

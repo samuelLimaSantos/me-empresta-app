@@ -7,6 +7,8 @@ import { Header } from "../../components/Header";
 import { MenuSideBar } from "../../components/MenuSideBar";
 import { SimpleButton } from "../../components/SimpleButton";
 import { SimpleInput } from "../../components/SimpleInput";
+import { AlternativeButton } from "../../components/AlternativeButton";
+
 import offerImage from "../../../assets/store-message.png";
 import stepImage from "../../../assets/create-image.png";
 
@@ -140,13 +142,14 @@ const CreateOffer = () => {
                             <SimpleInput placeholder="Telefone para contato" />
 
                             <SafeAreaView style={styles.containerDuo}>
-                                <SafeAreaView>
-                                    <SimpleInput placeholder="R$ 20,00" />
-                                </SafeAreaView>
-
-                                <View>
+                                <View style={{ width: 144 }}>
                                     <SimpleInput placeholder="Tempo de aluguel" />
                                 </View>
+
+                                <View style={{ width: 144 }}>
+                                    <SimpleInput placeholder="R$ 20,00" />
+                                </View>
+
 
                             </SafeAreaView>
 
@@ -160,7 +163,7 @@ const CreateOffer = () => {
 
                             <SimpleButton title="Concluir" click={() => { setNextStep(true) }} />
 
-                            <SimpleButton title="Voltar" click={() => { setNextStep(false) }} />
+                            <AlternativeButton title="Voltar" click={() => { setNextStep(false) }} />
 
 
                         </SafeAreaView>
