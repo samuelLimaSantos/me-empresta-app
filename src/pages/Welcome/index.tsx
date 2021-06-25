@@ -14,8 +14,8 @@ const Welcome = () => {
 
   return (
     <View style={styles.container} >
-      <View style={{ alignItems: 'center'} }>
-        <Image source={astronauta} style={styles.image}/>
+      <View style={{ alignItems: 'center' }}>
+        <Image source={astronauta} style={styles.image} />
         <View style={styles.containerTextBrand}>
           <Text style={styles.textBrandPartOne}>
             ME
@@ -29,14 +29,14 @@ const Welcome = () => {
         <Text style={styles.welcomeMessageTitle}>
           Bem vindo
         </Text>
-        <Text 
+        <Text
           style={styles.welcomeMessageText}
         >
-          Nós estamos felizes em te ver aqui!
+          Chegou um novo jeito de ter uma renda extra emprestando.
         </Text>
       </View>
-      <View style={{ alignItems: 'center'}}>
-        <SimpleButton click={handleGoToLogin} title="Conheça"/>
+      <View style={{ alignItems: 'center' }}>
+        <SimpleButton click={handleGoToLogin} title="Conheça" />
       </View>
     </View>
   )

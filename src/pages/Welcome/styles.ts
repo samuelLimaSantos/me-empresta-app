@@ -35,12 +35,12 @@ const styles = StyleSheet.create({
   },
   welcomeMessageTitle: {
     fontFamily: 'Roboto_700Bold',
-    fontSize: 20,
-    color: '#0B2338'
+    fontSize: 24,
+    color: '#9A5CD1'
   },
   welcomeMessageText: {
     fontFamily: 'Roboto_400Regular',
-    fontSize: 16,
+    fontSize: 14,
     color: 'rgba(11, 35, 56, 76)'
   }
 });
