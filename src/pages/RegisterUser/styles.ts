@@ -75,14 +75,16 @@ const styles = StyleSheet.create({
     width: 300,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 40
+    marginTop: 20
   },
 
 
   containerFakeButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: 10,
+    marginBottom: 20,
+
   },
 
   fakeButtonText: {
