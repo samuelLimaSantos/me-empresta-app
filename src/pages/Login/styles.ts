@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { theme } from '../../global/styles';
 import Constants from "expo-constants";
 
 const styles = StyleSheet.create({
@@ -12,14 +13,14 @@ const styles = StyleSheet.create({
     marginBottom: 18
   },
   signText: {
-    fontFamily: 'Roboto_900Black',
+    fontFamily: theme.fonts.black,
     fontSize: 32,
-    color: '#9A5CD1',
+    color: theme.colors.primary,
   },
   inText: {
-    fontFamily: 'Roboto_900Black',
+    fontFamily: theme.fonts.black,
     fontSize: 32,
-    color: '#9A5CD1',
+    color: theme.colors.primary,
     marginLeft: 58,
     marginTop: -15,
   },
@@ -30,24 +31,28 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
   notHaveAccountContainerTextOne: {
-    color: 'rgba(11, 35, 56, 76)',
-    fontFamily: 'Roboto_700Bold'
+    color: theme.colors.text,
+    fontFamily: theme.fonts.bold
   },
   notHaveAccountContainerTextTwo: {
-    color: '#9A5CD1',
-    fontFamily: 'Roboto_400Regular'
+    color: theme.colors.primary,
+    fontFamily: theme.fonts.regular
   },
   containerButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 30
+    marginTop: 30,
+    zIndex: 99999
   },
   image: {
     width: '100%',
     resizeMode: "cover",
     zIndex: -999999,
-    height: 350
-    
+    height: 350,
+    position: "absolute",
+    right: 0,
+    left: 0,
+    bottom: 0,
   }
 });
 

@@ -7,15 +7,23 @@ import { Header } from "../../components/Header";
 import { MenuSideBar } from "../../components/MenuSideBar";
 import { SimpleInput } from "../../components/SimpleInput";
 import astronautaLogin from "../../../assets/astronauta-login.png";
+import { useAuth } from "../../hooks/auth";
 
 const Home = () => {
 
   const navigation = useNavigation();
   const [search, setSearch] = useState(false);
+  const { signOut } = useAuth();
+
 
   return (
     <SafeAreaView style={styles.container}>
       <Header title1="Home" title2="Feed" />
+      <TouchableOpacity onPress={signOut}>
+        <Text style={{ fontSize: 30, fontWeight: 'bold'}}>
+          SAIR
+        </Text>
+      </TouchableOpacity>
       <SafeAreaView>
         <ScrollView showsVerticalScrollIndicator={false} style={styles.containerProdutos}>
 

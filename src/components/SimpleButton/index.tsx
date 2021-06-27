@@ -1,19 +1,20 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { Text } from "react-native";
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 import { styles } from "./styles";
 
-type SimpleButtonProps = {
+type SimpleButtonProps = RectButtonProps & {
   click: () => void,
   title: string;
 }
 
-const SimpleButton = ({click, title}: SimpleButtonProps) => {
+const SimpleButton = ({click, title, ...rest}: SimpleButtonProps) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={click}>
+    <RectButton style={styles.button} onPress={click} {...rest}>
       <Text style={styles.textButton}>
         {title}
       </Text>
-    </TouchableOpacity>
+    </RectButton>
   )
 }
 

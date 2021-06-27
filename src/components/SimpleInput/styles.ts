@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     backgroundColor: '#DBDBDB',
     borderRadius: 8,
-    marginTop: 20,
-    marginBottom: 20
+    marginTop: 10,
+    marginBottom: 10
   }
 });
 

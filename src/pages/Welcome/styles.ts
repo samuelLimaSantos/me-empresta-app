@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { theme } from '../../global/styles';
 import  Constants  from "expo-constants";
 
 const styles = StyleSheet.create({
@@ -18,14 +19,14 @@ const styles = StyleSheet.create({
     marginTop: -200
   },
   textBrandPartOne: {
-    fontFamily: 'Roboto_900Black',
+    fontFamily: theme.fonts.black,
     fontSize: 32,
-    color: '#9A5CD1',
+    color: theme.colors.primary,
   },
   textBrandPartTwo: {
-    fontFamily: 'Roboto_900Black',
+    fontFamily: theme.fonts.black,
     fontSize: 32,
-    color: '#9A5CD1',
+    color: theme.colors.primary,
     marginLeft: 32,
     marginTop: -15,
   },
@@ -36,12 +37,12 @@ const styles = StyleSheet.create({
   welcomeMessageTitle: {
     fontFamily: 'Roboto_700Bold',
     fontSize: 24,
-    color: '#9A5CD1'
+    color: theme.colors.primary
   },
   welcomeMessageText: {
     fontFamily: 'Roboto_400Regular',
     fontSize: 14,
-    color: 'rgba(11, 35, 56, 76)'
+    color: theme.colors.text
   }
 });
 
