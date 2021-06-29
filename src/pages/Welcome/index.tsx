@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
-import astronauta from "../../../assets/astronauta-welcome.png";
+import astronauta from "../../assets/astronauta-welcome.png";
 import { SimpleButton } from "../../components/SimpleButton";
 import { useNavigation } from "@react-navigation/native";
 

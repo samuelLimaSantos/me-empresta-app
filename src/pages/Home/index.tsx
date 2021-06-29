@@ -6,7 +6,7 @@ import { styles } from "./styles";
 import { Header } from "../../components/Header";
 import { MenuSideBar } from "../../components/MenuSideBar";
 import { SimpleInput } from "../../components/SimpleInput";
-import astronautaLogin from "../../../assets/astronauta-login.png";
+import astronautaLogin from "../../assets/astronauta-login.png";
 import { useAuth } from "../../hooks/auth";
 
 const Home = () => {

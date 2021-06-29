@@ -6,7 +6,7 @@ import { styles } from "./styles";
 import { Header } from "../../components/Header";
 import { MenuSideBar } from "../../components/MenuSideBar";
 
-import astronautaLogin from "../../../assets/astronauta-login.png";
+import astronautaLogin from "../../assets/astronauta-login.png";
 
 import { Ionicons } from '@expo/vector-icons';
 import CheckBox from '@react-native-community/checkbox';

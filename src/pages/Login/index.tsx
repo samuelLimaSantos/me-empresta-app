@@ -10,12 +10,13 @@ import {
   Alert,
 } from "react-native";
 import { SimpleButton } from "../../components/SimpleButton";
-import astronautaLogin from "../../../assets/astronauta-login.png";
+import astronautaLogin from "../../assets/astronauta-login.png";
 import { SimpleInput } from "../../components/SimpleInput";
 import { useNavigation } from "@react-navigation/native";
 import * as Yup from 'yup';
 import { useAuth } from '../../hooks/auth';
 import { styles } from "./styles";
+import { SimpleButtonWithoutBackground } from "../../components/SimpleButtonWithoutBackground";
 
 const Login = () => {
 
@@ -79,11 +80,11 @@ const Login = () => {
             Não tem uma conta?
           </Text>
 
-          <TouchableOpacity onPress={() => navigation.navigate("RegisterUser")}>
-            <Text style={styles.notHaveAccountContainerTextTwo}>
-              Cadastre-se
-            </Text>
-          </TouchableOpacity>
+          <SimpleButtonWithoutBackground 
+            onPress={() => navigation.navigate("RegisterUser")} 
+            title="Cadastre-se"
+          />
+         
         </View>
 
         <View>
