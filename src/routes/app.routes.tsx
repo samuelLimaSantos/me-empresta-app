@@ -49,7 +49,7 @@ const AppRoutes = () => {
           tabBarOptions={{
             labelStyle: { color: theme.colors.primary },
             activeTintColor: theme.colors.primary,
-            style: { height: 55, backgroundColor: '#fefefe'},
+            style: {  height: 60 ,paddingTop: 10, paddingBottom: 10, backgroundColor: '#fefefe'},
           }}>
             <App.Screen name="Home" component={Home} options={{
               tabBarLabel: 'Início',
