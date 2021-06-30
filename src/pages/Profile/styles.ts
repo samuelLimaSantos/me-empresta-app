@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 import Constants from "expo-constants";
+import { theme } from '../../global/styles';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -12,7 +14,9 @@ const styles = StyleSheet.create({
     width: 385,
     height: 670,
     marginTop: 85,
-    marginBottom: 50
+    marginBottom: 50,
+    alignItems: "center",
+    justifyContent: "center"
   },
 
   label: {

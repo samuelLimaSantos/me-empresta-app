@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, KeyboardAvoidingView, ImageBackground, TouchableOpacity, Image, SafeAreaView } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
 import { Header } from "../../components/Header";
-import { MenuSideBar } from "../../components/MenuSideBar";
-
-import astronautaLogin from "../../../assets/astronauta-login.png";
-
-import { Ionicons } from '@expo/vector-icons';
-import CheckBox from '@react-native-community/checkbox';
+import { SimpleButton } from "../../components/SimpleButton";
 import { useAuth } from "../../hooks/auth";
 
 
@@ -24,11 +18,17 @@ const Profile = () => {
     <SafeAreaView style={styles.container}>
       <Header title1="Perfil" title2="Usuário" />
       <SafeAreaView style={styles.containerItens}>
-      <TouchableOpacity onPress={signOut}>
-        <Text style={{ fontSize: 30, fontWeight: 'bold'}}>
-          SAIR
-        </Text>
-      </TouchableOpacity>
+
+        <View style={{ backgroundColor: "#5C2A9D", width: 200, height: 200, marginBottom: 10, borderRadius: 200}}></View>
+
+        <Text style={{ fontSize: 26, marginBottom: 4, fontWeight: 'bold', color: '#5C2A9D'}}>Amanda Teste</Text>
+        <Text style={{ fontSize: 16, marginBottom: 20, fontWeight: 'bold', color: '#5C2A9D'}}>Recife - PE</Text>
+
+
+            <SimpleButton 
+              click={signOut}
+              title="Sair"
+              />
       </SafeAreaView>
 
       {/* <MenuSideBar /> */}
