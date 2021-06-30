@@ -5,11 +5,12 @@ import { Home } from '../pages/Home';
 import { CreateOffer } from '../pages/CreateOffer';
 import { Cart } from '../pages/Cart';
 import { Profile } from '../pages/Profile';
+import { Requests } from '../pages/Requests';
 import { Ionicons } from '@expo/vector-icons'; 
 import { theme } from '../global/styles';
 
 type IconNames = 'home' | 'home-outline' | 'add-circle'| 'add-circle-outline' |
- 'cart' | 'cart-outline' | 'man' | 'man-outline';
+ 'cart' | 'cart-outline' | 'man' | 'man-outline' | 'archive' | 'archive-outline';
 
 const AppRoutes = () => {
   const App = createBottomTabNavigator();
@@ -36,6 +37,9 @@ const AppRoutes = () => {
                 case 'Profile':
                   iconName = focused ? 'man' : 'man-outline';
                   break;
+                case 'Requests':
+                  iconName = focused ? 'archive' : 'archive-outline';
+                  break;
               }
 
               return <Ionicons name={iconName} color={theme.colors.primary}size={26}/>;
@@ -50,6 +54,9 @@ const AppRoutes = () => {
             <App.Screen name="Home" component={Home} options={{
               tabBarLabel: 'Início',
             }}/>
+            <App.Screen name="Requests" component={Requests} options={{
+              tabBarLabel: 'Meus pedidos'
+            }} />
             <App.Screen name="CreateOffer" component={CreateOffer} options={{
               tabBarLabel: 'Novo produto',
             }}/>

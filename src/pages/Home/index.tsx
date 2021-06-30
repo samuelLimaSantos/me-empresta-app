@@ -1,203 +1,81 @@
-import React, { useState } from "react";
-import { View, Text, KeyboardAvoidingView, ImageBackground, TouchableOpacity, SafeAreaView } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, ImageBackground, TouchableOpacity, SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
 import { Header } from "../../components/Header";
-import { MenuSideBar } from "../../components/MenuSideBar";
-import { SimpleInput } from "../../components/SimpleInput";
-import astronautaLogin from "../../assets/astronauta-login.png";
-import { useAuth } from "../../hooks/auth";
+import { api } from '../../services/api';
+import { Loading } from "../../components/Loading";
+interface ProductProps {
+  id: string;
+  photo_id: string;
+  title: string;
+  description: string;
+  price: string;
+  quantity_days: number;
+}
 
 const Home = () => {
 
   const navigation = useNavigation();
   const [search, setSearch] = useState(false);
-  const { signOut } = useAuth();
+  const [products, setProducts] = useState<ProductProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    api.get(`/product`).then(response => {
+      setProducts(response.data);
+      setIsLoading(false);
+    });
+  }, []);
+
 
 
   return (
+    <>
     <SafeAreaView style={styles.container}>
-      <Header title1="Home" title2="Feed" />
-      <TouchableOpacity onPress={signOut}>
-        <Text style={{ fontSize: 30, fontWeight: 'bold'}}>
-          SAIR
-        </Text>
-      </TouchableOpacity>
+      <Header title1="Home" title2="Feed" hasSearch/>
+      
       <SafeAreaView>
-        <ScrollView showsVerticalScrollIndicator={false} style={styles.containerProdutos}>
+        <ScrollView  style={styles.containerProdutos}>
 
           <Text style={styles.titleContainer}>Novos itens</Text>
 
           <View style={styles.limiteContainer}>
-            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
+            {products.map(product => (
+              <TouchableOpacity activeOpacity={0.7} style={styles.product} key={product.id}>
+                <View style={styles.produto}>
+                  <ImageBackground style={styles.imageProduct} source={{
+                    uri: `https://upload-meempresta.s3.amazonaws.com/${product.photo_id}`
+                  }}>
+                    <View style={styles.boxNota}>
+                      <Text style={styles.Nota}>7.0</Text>
+                    </View>
+                  </ImageBackground>
+
+                  <Text style={styles.titleProduto}>{product.title}</Text>
+                  {/* <Text style={styles.categoryProduto}>Eletrônico</Text> */}
+
+                  <View style={styles.valueProduto}>
+                    <Text style={styles.precoProduto}>R${product.price.replace('.', ',')}</Text>
+                    <Text style={styles.tempoProduto}> por {product.quantity_days} dias</Text>
                   </View>
-                </ImageBackground>
-
-                <Text style={styles.titleProduto}>Monitor Odyssey</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 2000,00</Text>
-                  <Text style={styles.tempoProduto}> por 10 dias</Text>
                 </View>
-              </View>
-            </TouchableOpacity>
+              </TouchableOpacity>
 
-            <TouchableOpacity  activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
-                  </View>
-                </ImageBackground>
+            ))}
 
-                <Text style={styles.titleProduto}>Monitor Odyssey</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 2000,00</Text>
-                  <Text style={styles.tempoProduto}> por 10 dias</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
           </View>
 
-          <View style={styles.limiteContainer}>
-
-            <TouchableOpacity  activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
-                  </View>
-                </ImageBackground>
-
-                <Text style={styles.titleProduto}>Monitor Odyssey</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 2000,00</Text>
-                  <Text style={styles.tempoProduto}> por 10 dias</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
-                  </View>
-                </ImageBackground>
-
-                <Text style={styles.titleProduto}>Monitor LG 29WK600</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 1000,00</Text>
-                  <Text style={styles.tempoProduto}> por 20 dias</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity activeOpacity={0.7} style={styles.buttonMore}>
-            <Text style={styles.textButtonMore}>Mostrar mais</Text>
-          </TouchableOpacity>
-
-          {/* Outros */}
-          <Text style={styles.titleContainer}>Mais procurados</Text>
-
-          <View style={styles.limiteContainer}>
-            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
-                  </View>
-                </ImageBackground>
-
-                <Text style={styles.titleProduto}>Monitor Odyssey</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 2000,00</Text>
-                  <Text style={styles.tempoProduto}> por 10 dias</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
-                  </View>
-                </ImageBackground>
-
-                <Text style={styles.titleProduto}>Monitor Odyssey</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 2000,00</Text>
-                  <Text style={styles.tempoProduto}> por 10 dias</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-
-          <View style={styles.limiteContainer}>
-            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
-                  </View>
-                </ImageBackground>
-
-                <Text style={styles.titleProduto}>Monitor Odyssey</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 2000,00</Text>
-                  <Text style={styles.tempoProduto}> por 10 dias</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity activeOpacity={0.7} style={styles.product}>
-              <View style={styles.produto}>
-                <ImageBackground style={styles.imageProduct} source={astronautaLogin}>
-                  <View style={styles.boxNota}>
-                    <Text style={styles.Nota}>7.0</Text>
-                  </View>
-                </ImageBackground>
-
-                <Text style={styles.titleProduto}>Monitor Odyssey</Text>
-                <Text style={styles.categoryProduto}>Eletrônico</Text>
-
-                <View style={styles.valueProduto}>
-                  <Text style={styles.precoProduto}> R$ 2000,00</Text>
-                  <Text style={styles.tempoProduto}> por 10 dias</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity activeOpacity={0.7} style={styles.buttonMore}>
-            <Text style={styles.textButtonMore}>Mostrar mais</Text>
-          </TouchableOpacity>
+          
         </ScrollView>
       </SafeAreaView>
-
-      {/* <MenuSideBar /> */}
+      
     </SafeAreaView>
+    {isLoading && <Loading />}
+    </>
   )
 }
 

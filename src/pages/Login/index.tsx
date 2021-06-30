@@ -47,8 +47,6 @@ const Login = () => {
         password
       });
 
-      setLoading(false);
-
     } catch (error) {
 
       setLoading(false);

@@ -10,6 +10,7 @@ import astronautaLogin from "../../../assets/astronauta-login.png";
 
 import { Ionicons } from '@expo/vector-icons';
 import CheckBox from '@react-native-community/checkbox';
+import { useAuth } from "../../hooks/auth";
 
 
 const Profile = () => {
@@ -17,12 +18,17 @@ const Profile = () => {
   const navigation = useNavigation();
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [count, setCount] = useState(0);
+  const { signOut } = useAuth();
 
   return (
     <SafeAreaView style={styles.container}>
       <Header title1="Perfil" title2="Usuário" />
       <SafeAreaView style={styles.containerItens}>
-
+      <TouchableOpacity onPress={signOut}>
+        <Text style={{ fontSize: 30, fontWeight: 'bold'}}>
+          SAIR
+        </Text>
+      </TouchableOpacity>
       </SafeAreaView>
 
       {/* <MenuSideBar /> */}

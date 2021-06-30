@@ -24,6 +24,7 @@ interface AuthContextData {
   loading: boolean;
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
+  token: string;
 }
 
 type Props = {
@@ -79,7 +80,7 @@ export const AuthProvider = ({ children }: Props) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ userId: data.userId, signIn, signOut, loading }}>
+    <AuthContext.Provider value={{ userId: data.userId, signIn, signOut, loading, token: data.token }}>
       {children}
     </AuthContext.Provider>
   );

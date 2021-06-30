@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { theme } from "../../global/styles";
 
 const styles = StyleSheet.create({
   container: {
@@ -27,8 +28,8 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 22,
-    color: '#0400BE',
-    fontWeight: 'bold'
+    color: theme.colors.primary,
+    fontFamily: theme.fonts.bold
   },
 
   divisor: {
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 22,
     color: '#DBDBDB',
-    fontWeight: 'bold',
+    fontFamily: theme.fonts.bold
   },
 
   containerOptionsHeader: {

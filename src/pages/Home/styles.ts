@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import Constants from "expo-constants";
+import { theme } from "../../global/styles";
 
 const styles = StyleSheet.create({
   container: {
@@ -9,14 +10,13 @@ const styles = StyleSheet.create({
   },
 
   containerProdutos: {
-    width: 385,
-    height: 670,
+    width: '100%',
     marginTop: 85,
-    marginBottom: 50
   },
 
   limiteContainer: {
     flexDirection: 'row',
+    flexWrap:"wrap"
   },
 
   product: {
@@ -25,16 +25,16 @@ const styles = StyleSheet.create({
 
   titleContainer: {
     fontSize: 24,
-    fontWeight: '700',
-    color: '#4B00EB',
+    fontFamily: theme.fonts.bold,
+    color: theme.colors.primary,
     marginLeft: 14,
-    marginTop: 2,
-    marginBottom: 6,
+    marginTop: 24,
+    marginBottom: 32,
   },
 
   produto: {
     backgroundColor: '#fff',
-    width: 180,
+    width: 170,
     height: 260,
     alignItems: 'center',
     marginLeft: 10,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   boxNota: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#4B00EB',
+    backgroundColor:  theme.colors.primary,
     paddingTop: 10,
     paddingBottom: 10,
     width: 40,
@@ -68,10 +68,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontWeight:'700',
     fontSize: 14,
+    color: theme.colors.text
   },
 
   categoryProduto: {
     backgroundColor: 'yellow',
+    color: theme.colors.text,
     fontWeight:'700',
     fontSize: 12,
     padding: 12,
@@ -89,20 +91,20 @@ const styles = StyleSheet.create({
 
   precoProduto: {
     fontSize: 20,
-    color: 'blue',
+    color: theme.colors.primary,
     fontWeight:'bold',
   },
 
   tempoProduto: {
     fontSize: 10,
-    color: 'blue',
+    color: theme.colors.primary,
     fontWeight:'700',
   },
 
   buttonMore: {
     borderStyle: "solid",
     borderWidth: 2,
-    borderColor: '#4B00EB',
+    borderColor: theme.colors.primary,
     borderRadius: 20,
     width: 140,
     paddingTop: 5,
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
   },
 
   textButtonMore: {
-    color: '#4B00EB'
+    color: theme.colors.primary
   }
 });
 
