@@ -37,13 +37,14 @@ const styles = StyleSheet.create({
     width: 170,
     height: 260,
     alignItems: 'center',
-    marginLeft: 10,
+    marginLeft: 20,
     marginRight: 10,
   },
 
   imageProduct: {
     width: 140,
     height: 150,
+    marginTop: 10,
     alignItems: 'center',
   },
 

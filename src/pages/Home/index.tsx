@@ -59,7 +59,7 @@ const Home = () => {
                   {/* <Text style={styles.categoryProduto}>Eletrônico</Text> */}
 
                   <View style={styles.valueProduto}>
-                    <Text style={styles.precoProduto}>R${product.price.replace('.', ',')}</Text>
+                    <Text style={styles.precoProduto}>R$ {product.price.replace('.', ',')}</Text>
                     <Text style={styles.tempoProduto}> por {product.quantity_days} dias</Text>
                   </View>
                 </View>
