@@ -196,7 +196,7 @@ const Home = () => {
         </ScrollView>
       </SafeAreaView>
 
-      <MenuSideBar />
+      {/* <MenuSideBar /> */}
     </SafeAreaView>
   )
 }

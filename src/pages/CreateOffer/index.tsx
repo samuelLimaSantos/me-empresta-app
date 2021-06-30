@@ -175,7 +175,7 @@ const CreateOffer = () => {
                 }
             </ScrollView>
 
-            <MenuSideBar />
+            {/* <MenuSideBar /> */}
         </SafeAreaView>
     )
 }

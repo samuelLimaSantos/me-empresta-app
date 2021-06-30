@@ -11,6 +11,7 @@ import { api } from '../../services/api';
 import { theme } from "../../global/styles";
 import { styles } from "./styles";
 import * as Yup from 'yup';
+import { Loading } from "../../components/Loading";
 
 enum Steps {
   pessoalData = 0,
@@ -172,9 +173,7 @@ const RegisterUser = () => {
       </ScrollView>
 
       {loading && (
-        <View style={styles.activityContainer}>
-          <ActivityIndicator size="large" color={theme.colors.primary}/>
-        </View>
+        <Loading />
       )}
     </>
   )

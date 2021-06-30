@@ -4,7 +4,6 @@ import {
   Text,
   KeyboardAvoidingView, 
   Image, 
-  TouchableOpacity, 
   Platform, 
   SafeAreaView,
   Alert,
@@ -17,6 +16,7 @@ import * as Yup from 'yup';
 import { useAuth } from '../../hooks/auth';
 import { styles } from "./styles";
 import { SimpleButtonWithoutBackground } from "../../components/SimpleButtonWithoutBackground";
+import { Loading } from "../../components/Loading";
 
 const Login = () => {
 
@@ -24,10 +24,13 @@ const Login = () => {
 
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
-  const { signIn, userId } = useAuth();
+  const [ loading, setLoading] = useState(false);
+  const { signIn, userId  } = useAuth();
 
   const handleLogin = useCallback( async () => {
     try {
+      setLoading(true);
+
       const schema = Yup.object().shape({
         email: Yup.string()
           .required('E-mail obrigatório')
@@ -44,7 +47,12 @@ const Login = () => {
         password
       });
 
+      setLoading(false);
+
     } catch (error) {
+
+      setLoading(false);
+
       if (error instanceof Yup.ValidationError) {
         const errorMessage = error.inner.reduce((acc, current) => {
           return `${acc} ${current.message}`
@@ -62,58 +70,61 @@ const Login = () => {
   }, [email, password, signIn])
 
   return (
-    <SafeAreaView style={{ flex: 1}}>
+    <>
+      <SafeAreaView style={{ flex: 1}}>
 
-      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}>
+        <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}>
 
-        <View style={styles.signInContainer}>
-          <Text style={styles.signText}>
-            Sign
-          </Text>
-          <Text style={styles.inText}>
-            In
-          </Text>
-        </View>
+          <View style={styles.signInContainer}>
+            <Text style={styles.signText}>
+              Sign
+            </Text>
+            <Text style={styles.inText}>
+              In
+            </Text>
+          </View>
 
-        <View style={styles.notHaveAccountContainer}>
-          <Text style={styles.notHaveAccountContainerTextOne}>
-            Não tem uma conta?
-          </Text>
+          <View style={styles.notHaveAccountContainer}>
+            <Text style={styles.notHaveAccountContainerTextOne}>
+              Não tem uma conta?
+            </Text>
 
-          <SimpleButtonWithoutBackground 
-            onPress={() => navigation.navigate("RegisterUser")} 
-            title="Cadastre-se"
-          />
-         
-        </View>
-
-        <View>
-          <SimpleInput
-            placeholder="E-mail"
-            keyboardType="email-address"
-            autoCorrect={false}
-            autoCapitalize="none"
-            returnKeyType="next"
-            onChangeText={setEmail}
+            <SimpleButtonWithoutBackground 
+              onPress={() => navigation.navigate("RegisterUser")} 
+              title="Cadastre-se"
             />
-          <SimpleInput
-            placeholder="Senha"
-            secureTextEntry
-            returnKeyType="send"
-            onChangeText={setPassword}
-            />
-        </View>
+          
+          </View>
 
-        <View style={styles.containerButton}>
-          <SimpleButton 
-            click={handleLogin}
-            title="Login"
-            />
-        </View>
-      </KeyboardAvoidingView>
+          <View>
+            <SimpleInput
+              placeholder="E-mail"
+              keyboardType="email-address"
+              autoCorrect={false}
+              autoCapitalize="none"
+              returnKeyType="next"
+              onChangeText={setEmail}
+              />
+            <SimpleInput
+              placeholder="Senha"
+              secureTextEntry
+              returnKeyType="send"
+              onChangeText={setPassword}
+              />
+          </View>
 
-      <Image source={astronautaLogin} style={styles.image} />
-    </SafeAreaView>
+          <View style={styles.containerButton}>
+            <SimpleButton 
+              click={handleLogin}
+              title="Login"
+              />
+          </View>
+        </KeyboardAvoidingView>
+
+        <Image source={astronautaLogin} style={styles.image} />
+      </SafeAreaView>
+      {loading && <Loading />}
+    </>
   )
 }
 

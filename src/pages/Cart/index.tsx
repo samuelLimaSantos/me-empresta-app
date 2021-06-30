@@ -119,14 +119,13 @@ const Cart = () => {
             <TouchableOpacity style={styles.fakeButtonAlternative}>
               <Text style={styles.textButtonAlternative}>Finalizar compra</Text>
             </TouchableOpacity>
-
           </SafeAreaView>
         </SafeAreaView>
 
 
       </SafeAreaView>
 
-      <MenuSideBar />
+      {/* <MenuSideBar /> */}
     </SafeAreaView>
   )
 }

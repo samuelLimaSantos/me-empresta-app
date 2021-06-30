@@ -23,14 +23,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 40
   },
-
-  activityContainer: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.9)',
-    justifyContent: 'center'
-  }
-
 });
 
 export { styles };
