@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from '../pages/Home';
 import { CreateOffer } from '../pages/CreateOffer';
 import { Cart } from '../pages/Cart';
@@ -8,15 +9,16 @@ import { Profile } from '../pages/Profile';
 import { Requests } from '../pages/Requests';
 import { Ionicons } from '@expo/vector-icons'; 
 import { theme } from '../global/styles';
+import { ProductDetails } from '../pages/ProductDetails';
 
 type IconNames = 'home' | 'home-outline' | 'add-circle'| 'add-circle-outline' |
  'cart' | 'cart-outline' | 'man' | 'man-outline' | 'archive' | 'archive-outline';
 
-const AppRoutes = () => {
+
+const TabNavigation = () => {
   const App = createBottomTabNavigator();
 
   return (
-    <NavigationContainer>
           <App.Navigator initialRouteName="Home"
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused }) => {
@@ -67,8 +69,23 @@ const AppRoutes = () => {
               tabBarLabel: 'Perfil'
             }}/>
           </App.Navigator>
+
+          
+  )
+}
+
+const AppRoutes = () => {
+  const Stack = createStackNavigator();
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={TabNavigation} />
+        <Stack.Screen name="ProductDetails" component={ProductDetails} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
+  
 }
 
 export { AppRoutes };

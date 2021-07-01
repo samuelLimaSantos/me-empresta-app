@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { View, Text, ImageBackground, TouchableOpacity, SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
@@ -6,17 +6,20 @@ import { styles } from "./styles";
 import { Header } from "../../components/Header";
 import { api } from '../../services/api';
 import { Loading } from "../../components/Loading";
-interface ProductProps {
+export interface ProductProps {
   id: string;
   photo_id: string;
   title: string;
   description: string;
   price: string;
   quantity_days: number;
+  delivery_way: string;
+  delivery_point: string;
+  uf: string;
+  city: string;
 }
 
 const Home = () => {
-
   const navigation = useNavigation();
   const [search, setSearch] = useState(false);
   const [products, setProducts] = useState<ProductProps[]>([]);
@@ -31,7 +34,9 @@ const Home = () => {
     });
   }, []);
 
-
+  const handleGoToProductDetail = (product: ProductProps) => {
+    navigation.navigate("ProductDetails", {product});
+  }
 
   return (
     <>
@@ -45,7 +50,12 @@ const Home = () => {
 
           <View style={styles.limiteContainer}>
             {products.map(product => (
-              <TouchableOpacity activeOpacity={0.7} style={styles.product} key={product.id}>
+              <TouchableOpacity 
+                activeOpacity={0.7} 
+                style={styles.product} 
+                key={product.id}
+                onPress={() => handleGoToProductDetail(product)}
+              >
                 <View style={styles.produto}>
                   <ImageBackground style={styles.imageProduct} source={{
                     uri: `https://upload-meempresta.s3.amazonaws.com/${product.photo_id}`

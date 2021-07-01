@@ -1,17 +1,13 @@
 import { StyleSheet } from "react-native";
 import { theme } from "../../global/styles";
+import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
   container: {
     width: "100%",
     backgroundColor: "#fff",
     alignItems: 'center',
-    position: 'absolute',
-    marginTop: '10%',
-    paddingTop: 10,
-    paddingBottom: 10,
-    left: 0,
-    right: 0,
+    paddingTop: Constants.statusBarHeight
   },
 
   containerHeader: {

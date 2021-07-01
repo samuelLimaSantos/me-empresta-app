@@ -4,14 +4,12 @@ import { theme } from "../../global/styles";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight,
     flex: 1,
     alignItems: 'center',
   },
 
   containerProdutos: {
     width: '100%',
-    marginTop: 85,
   },
 
   limiteContainer: {
