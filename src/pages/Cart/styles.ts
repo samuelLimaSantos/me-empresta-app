@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { theme } from "../../global/styles";
 
 const styles = StyleSheet.create({
   container: {
@@ -7,14 +8,11 @@ const styles = StyleSheet.create({
   },
 
   containerItens: {
-    width: 385,
-    height: 670,
-    marginTop: 85,
-    marginBottom: 50
+    paddingHorizontal: 10,
   },
 
   label: {
-    color: '#5C2A9D',
+    color: theme.colors.primary,
     fontWeight: 'bold',
     fontSize: 18,
     textAlign: 'center',
@@ -30,7 +28,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderWidth: 1,
-    borderColor: '#5C2A9D',
+    borderColor: theme.colors.primary,
     borderRadius: 4,
   },
 
@@ -49,7 +47,7 @@ const styles = StyleSheet.create({
   },
 
   textProduct: {
-    color: '#5C2A9D',
+    color: theme.colors.primary,
     fontSize: 14,
     marginLeft: 5,
     fontWeight: 'bold'
@@ -71,7 +69,7 @@ const styles = StyleSheet.create({
   },
 
   textPrice: {
-    color: '#5C2A9D',
+    color: theme.colors.primary,
     fontSize: 14,
     marginLeft: 10,
     marginRight: 10,
@@ -84,19 +82,20 @@ const styles = StyleSheet.create({
   },
 
   boxTotal: {
-    alignItems: 'center',
+    paddingHorizontal: 10,
+    alignItems: 'flex-end',
     marginBottom: 80
   },
 
   textTotal: {
     color: '#455A64',
-    fontSize: 32,
-    fontWeight: 'bold'
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 
   textPriceTotal: {
-    color: '#5C2A9D',
-    fontSize: 32,
+    color: theme.colors.primary,
+    fontSize: 30,
     marginTop: 5,
     marginBottom: 5,
     fontWeight: 'bold'
@@ -104,7 +103,6 @@ const styles = StyleSheet.create({
 
   containerOptions: {
     alignItems: 'center',
-    flexDirection: 'row',
     marginBottom: 20,
     marginTop: 40,
     width: '100%'
@@ -120,7 +118,7 @@ const styles = StyleSheet.create({
   fakeButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#5C2A9D',
+    backgroundColor: theme.colors.primary,
     borderRadius: 4,
     padding: 10,
     marginLeft: 10,
@@ -143,7 +141,7 @@ const styles = StyleSheet.create({
   },
 
   textButtonAlternative: {
-    color: '#5C2A9D',
+    color: theme.colors.primary,
     fontSize: 10,
     fontWeight: 'bold'
   },

@@ -17,6 +17,9 @@ export interface ProductProps {
   delivery_point: string;
   uf: string;
   city: string;
+  user_id: {
+    whatsapp: string;
+  }
 }
 
 const Home = () => {
@@ -29,6 +32,7 @@ const Home = () => {
     setIsLoading(true);
 
     api.get(`/product`).then(response => {
+      console.table(response.data);
       setProducts(response.data);
       setIsLoading(false);
     });

@@ -10,10 +10,13 @@ const styles = StyleSheet.create({
 
   containerProdutos: {
     width: '100%',
+    marginBottom: 60,
+
   },
 
   limiteContainer: {
     flexDirection: 'row',
+    justifyContent: 'center',
     flexWrap:"wrap"
   },
 
