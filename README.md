@@ -1,43 +1,48 @@
-<h1 align="center">Welcome to Me Empresta App 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/samuelLimaSantos/me-empresta" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
+
+<p align="center">
+  <img src="./assets/logo.png">
 </p>
 
-> Repositorio responsavel por aramazenar o projeto mobile do me empresta desenvolvido em React Native.
+    
+# Me Empresta App
 
-### 🏠 [Homepage](https://meempresta.vercel.app/)
+O Me Empresta é uma solução que permite as pessoas emprestarem coisas do dia-a-dia de maneira rápida e segura
 
-### ✨ [Demo](https://meempresta.vercel.app/)
 
-## Install
 
-```sh
-yarn install
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+## Authors
+
+- [@samuelLimaSantos](https://www.github.com/samuelLimaSantos)
+- [@Jonisson-Gomes](https://www.github.com/Jonisson-Gomes)
+
+  
+## Demo
+
+![Demo](demo.gif)
+  
+## Installation 
+
+Install my-project with npm
+
+```bash 
+  npm install 
+  npm start
 ```
 
-## Usage
+Install my-project with yarn
 
-```sh
-expo start
+```bash 
+  yarn 
+  yarn start
 ```
+## Lessons Learned
 
-## Author
+Durante esse projeto pude aprender diversos fundamentos do desenvolvimento mobile utilizando o React Native
+em conjunto com o Expo. Além disso, foi um desafio juntar isso com o prazo do projeto.
+## License
 
-👤 **Samuel Santos**
+[MIT](https://choosealicense.com/licenses/mit/)
 
-* Website: https://github.com/samuelLimaSantos
-* Github: [@samuelLimaSantos](https://github.com/samuelLimaSantos)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/samuel-santos-036375174\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/samuel-santos-036375174\/)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+  
